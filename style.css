@@ -36,7 +36,8 @@ nav.nav {
 .nav img,
 .footer img {
     width: 1.5rem;
-    opacity: 75%;
+    /* opacity: 75%; */
+    filter: brightness(0) saturate(169%) invert(50%) sepia(101%) saturate(524%) hue-rotate(363deg);
 }
 
 .nav .profile_logo {
@@ -48,6 +49,12 @@ nav.nav {
 .nav button {
     border: none;
     background-color: transparent;
+}
+
+.logo{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #ed9600;
 }
 
 .content {
@@ -91,7 +98,7 @@ nav.nav {
     border-radius: 20px;
     padding: 1rem;
     border: none;
-    background-color: yellow;
+    background-color: #ed9600;
 }
 
 
@@ -162,9 +169,6 @@ nav.nav {
     margin-bottom: 10px;
 }
 
-/* input[type="text"]:not(:placeholder-shown)  .footer{
-   display: none;
-}  */
 .delete , .like{
     border: none;
     background-color: transparent;
@@ -177,6 +181,4 @@ nav.nav {
 
 .empty_todo{
     font-size: 1.2rem;
-    text-align: center;
-    /* background-color: red; */
 }
