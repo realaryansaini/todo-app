@@ -9,6 +9,7 @@ let input_note = document.querySelector("textarea.input_note")
 back_btn.addEventListener("click", () => {
     let add_page = document.querySelector(".main_add_container")
     add_page.style.right = "-100vw"
+    todos = JSON.parse(localStorage.getItem("todo"))
 
     if (input_title.value == '' || input_note.value == "") {
         return
@@ -18,7 +19,6 @@ back_btn.addEventListener("click", () => {
     let active_todo = JSON.parse(localStorage.getItem("active_todo"))
     if (active_todo == null) {
 
-        todos = JSON.parse(localStorage.getItem("todo"))
         let new_todos = todos
         let todo_id = todos == null ? 1 : todos.length + 1
         if (todos == null) {
@@ -39,6 +39,8 @@ back_btn.addEventListener("click", () => {
         if (active_todo.title !== input_title.value || active_todo.note !== input_note.value) {
             localStorage.setItem("todo", JSON.stringify(todos.map((t) => (t.id == active_todo.id) ? { ...t, title: input_title.value, note: input_note.value } : t)))
             update_todo()
+            // console.log("somthing chnage");
+            
         }
     }
 
